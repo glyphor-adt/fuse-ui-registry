@@ -112,13 +112,13 @@ export const ContentItemSchema = z.object({
  */
 export const SectionSchema = z.object({
   id: z.string().optional(),
-  type: z.string().min(1, "Section type is required"),
+  type: z.string().optional(),
   title: z.string().optional(),
   subtitle: z.string().optional(),
   description: z.string().optional(),
   layout: z.enum(["single", "grid", "list", "carousel"]).optional(),
   columns: z.number().int().positive().optional(),
-  content: z.array(ContentItemSchema).optional(),
+  content: z.union([z.array(ContentItemSchema), z.string()]).optional(),
   backgroundImage: z.string().url("Section background image must be a valid URL").optional(),
   backgroundColor: z.string().optional(),
   padding: z.enum(["none", "small", "medium", "large"]).optional(),
@@ -126,15 +126,26 @@ export const SectionSchema = z.object({
 });
 
 /**
+ * Kit configuration for a reusable component kit
+ */
+export const KitSchema = z.object({
+  id: z.string().min(1, "Kit id is required"),
+  name: z.string().min(1, "Kit name is required"),
+  description: z.string().optional(),
+  sections: z.array(SectionSchema),
+});
+
+/**
  * Complete marketing template configuration schema
  */
 export const TemplateConfigSchema = z.object({
-  meta: MetaSchema,
-  brand: BrandSchema,
-  theme: ThemeSchema,
-  nav: NavSchema,
-  hero: HeroSchema,
-  sections: z.array(SectionSchema),
+  meta: MetaSchema.optional(),
+  brand: BrandSchema.optional(),
+  theme: ThemeSchema.optional(),
+  nav: NavSchema.optional(),
+  hero: HeroSchema.optional(),
+  sections: z.array(SectionSchema).optional(),
+  kits: z.array(KitSchema).optional(),
 });
 
 /**
@@ -148,4 +159,5 @@ export type Nav = z.infer<typeof NavSchema>;
 export type Hero = z.infer<typeof HeroSchema>;
 export type ContentItem = z.infer<typeof ContentItemSchema>;
 export type Section = z.infer<typeof SectionSchema>;
+export type Kit = z.infer<typeof KitSchema>;
 export type TemplateConfig = z.infer<typeof TemplateConfigSchema>;

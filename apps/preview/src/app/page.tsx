@@ -21,7 +21,7 @@ export default function Home({
         </p>
         <div className="kit-list">
           <h2 className="text-2xl font-semibold mb-4">Available Kits:</h2>
-          {validatedConfig.kits.map((kit) => (
+          {validatedConfig.kits?.map((kit) => (
             <div key={kit.id}>
               <Link href={`/?kit=${kit.id}`} className="kit-link">
                 {kit.name} ({kit.id})
@@ -44,7 +44,7 @@ export default function Home({
         </p>
         <div className="kit-list">
           <h2 className="text-xl font-semibold mb-3">Available Kits:</h2>
-          {validatedConfig.kits.map((k) => (
+          {validatedConfig.kits?.map((k) => (
             <div key={k.id}>
               <Link href={`/?kit=${k.id}`} className="kit-link">
                 {k.name} ({k.id})
