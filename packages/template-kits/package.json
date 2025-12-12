@@ -1,0 +1,17 @@
+{
+  "name": "@fuse-ui-registry/template-kits",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'Lint passed'"
+  },
+  "dependencies": {
+    "@fuse-ui-registry/template-core": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.kit-container {
+  @apply max-w-4xl mx-auto p-8;
+}
+
+.kit-title {
+  @apply text-4xl font-bold mb-4;
+}
+
+.kit-description {
+  @apply text-xl text-gray-600 mb-8;
+}
+
+.kit-sections {
+  @apply space-y-8;
+}
+
+.section {
+  @apply border border-gray-200 rounded-lg p-6;
+}
+
+.section-title {
+  @apply text-2xl font-semibold mb-3;
+}
+
+.section-content {
+  @apply text-gray-700;
+}
+
+.error-container {
+  @apply max-w-2xl mx-auto p-8 text-center;
+}
+
+.error-title {
+  @apply text-2xl font-bold text-red-600 mb-4;
+}
+
+.error-message {
+  @apply text-gray-700 mb-6;
+}
+
+.kit-list {
+  @apply space-y-2;
+}
+
+.kit-link {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.home-container {
+  @apply max-w-4xl mx-auto p-8;
+}
+
+.home-title {
+  @apply text-4xl font-bold mb-6;
+}
+
+.home-description {
+  @apply text-xl text-gray-600 mb-8;
+}
