@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { templateConfig } from '../../../../content/template.config';
+import { templateConfig } from '@content/template.config';
 import { loadTemplateConfig } from '@fuse-ui-registry/template-kits';
 import { KitRenderer } from '@fuse-ui-registry/ui';
 import { getKitById } from '@fuse-ui-registry/template-core';
@@ -9,11 +9,10 @@ export default function Home({
 }: {
   searchParams: { kit?: string };
 }) {
+  const validatedConfig = loadTemplateConfig(templateConfig);
   const kitId = searchParams.kit;
 
   if (!kitId) {
-    const validatedConfig = loadTemplateConfig(templateConfig);
-    
     return (
       <div className="home-container">
         <h1 className="home-title">Fuse UI Registry - Kit Preview</h1>
@@ -34,7 +33,6 @@ export default function Home({
     );
   }
 
-  const validatedConfig = loadTemplateConfig(templateConfig);
   const kit = getKitById(validatedConfig, kitId);
 
   if (!kit) {
