@@ -1,13 +1,21 @@
 {
-  "name": "@fuse-ui-registry/template-core",
-  "version": "0.0.0",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "name": "@fuse-ui/template-core",
+  "version": "0.1.0",
+  "description": "Core schema and validation for Fuse UI marketing template configurations",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "typecheck": "tsc --noEmit",
-    "lint": "echo 'Lint passed'"
+    "dev": "tsc --watch"
   },
+  "keywords": [
+    "template",
+    "schema",
+    "validation",
+    "zod"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
     "zod": "^3.22.4"
   },

@@ -1,29 +1,81 @@
-import { z } from 'zod';
+/**
+ * @fuse-ui/template-core
+ *
+ * Core schema and validation for Fuse UI marketing template configurations.
+ * This package provides Zod schemas and TypeScript types for defining
+ * marketing templates with meta, brand, theme, navigation, hero, and sections.
+ *
+ * @example
+ * ```typescript
+ * import { validateTemplateConfig, type TemplateConfig } from '@fuse-ui/template-core';
+ *
+ * const config: TemplateConfig = {
+ *   meta: {
+ *     title: 'My Marketing Template',
+ *     description: 'A beautiful template',
+ *     version: '1.0.0'
+ *   },
+ *   brand: {
+ *     name: 'Acme Corp',
+ *     primaryColor: '#3B82F6'
+ *   },
+ *   theme: {
+ *     mode: 'light'
+ *   },
+ *   nav: {
+ *     items: [
+ *       { label: 'Home', href: '/' },
+ *       { label: 'About', href: '/about' }
+ *     ]
+ *   },
+ *   hero: {
+ *     title: 'Welcome to Acme',
+ *     subtitle: 'The best products in the world'
+ *   },
+ *   sections: [
+ *     {
+ *       type: 'features',
+ *       title: 'Our Features',
+ *       layout: 'grid',
+ *       content: []
+ *     }
+ *   ]
+ * };
+ *
+ * // Validate the config - throws clear errors in dev
+ * const validated = validateTemplateConfig(config);
+ * ```
+ */
 
-export const TemplateConfigSchema = z.object({
-  kits: z.array(
-    z.object({
-      id: z.string(),
-      name: z.string(),
-      description: z.string(),
-      sections: z.array(
-        z.object({
-          title: z.string(),
-          content: z.string(),
-        })
-      ),
-    })
-  ),
-});
+// Export all schemas
+export {
+  MetaSchema,
+  BrandSchema,
+  ThemeSchema,
+  NavItemSchema,
+  NavSchema,
+  HeroSchema,
+  ContentItemSchema,
+  SectionSchema,
+  TemplateConfigSchema,
+} from "./schema";
 
-export type TemplateConfig = z.infer<typeof TemplateConfigSchema>;
-export type Kit = TemplateConfig['kits'][number];
-export type Section = Kit['sections'][number];
+// Export all types
+export type {
+  Meta,
+  Brand,
+  Theme,
+  NavItem,
+  Nav,
+  Hero,
+  ContentItem,
+  Section,
+  TemplateConfig,
+} from "./schema";
 
-export function validateTemplateConfig(config: unknown): TemplateConfig {
-  return TemplateConfigSchema.parse(config);
-}
-
-export function getKitById(config: TemplateConfig, kitId: string): Kit | undefined {
-  return config.kits.find((kit) => kit.id === kitId);
-}
+// Export validation functions and error class
+export {
+  validateTemplateConfig,
+  safeValidateTemplateConfig,
+  TemplateValidationError,
+} from "./validator";
