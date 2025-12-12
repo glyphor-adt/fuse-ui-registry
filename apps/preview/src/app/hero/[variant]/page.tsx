@@ -12,7 +12,7 @@ export default function HeroVariantPage({ params }: HeroVariantPageProps): JSX.E
   const { variant: variantSlug } = params;
   
   // Check if variant exists
-  if (!variantList.includes(variantSlug as any)) {
+  if (!variantList.includes(variantSlug as (typeof variantList)[number])) {
     notFound();
   }
   

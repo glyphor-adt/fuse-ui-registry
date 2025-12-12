@@ -61,3 +61,57 @@
 .home-description {
   @apply text-xl text-gray-600 mb-8;
 }
+
+/* Hero Section Styles */
+.hero-basic {
+  @apply p-8 text-center;
+}
+
+.hero-split {
+  @apply flex gap-8 p-8 items-center;
+}
+
+.hero-split-right {
+  @apply flex-row;
+}
+
+.hero-split-left {
+  @apply flex-row-reverse;
+}
+
+.hero-media {
+  @apply p-8 text-center bg-cover bg-center;
+}
+
+.hero-content {
+  @apply flex-1;
+}
+
+.hero-title {
+  @apply text-3xl font-bold mb-4;
+}
+
+.hero-subtitle {
+  @apply text-xl text-gray-700 mb-2;
+}
+
+.hero-description {
+  @apply text-gray-600;
+}
+
+.hero-image {
+  @apply flex-1;
+}
+
+.hero-image img {
+  @apply w-full h-auto rounded-lg;
+}
+
+.hero-media-element {
+  @apply mt-6 mx-auto max-w-2xl;
+}
+
+.hero-media-element img,
+.hero-media-element video {
+  @apply w-full h-auto rounded-lg;
+}
