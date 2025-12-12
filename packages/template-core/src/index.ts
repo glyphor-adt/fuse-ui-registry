@@ -57,6 +57,7 @@ export {
   HeroSchema,
   ContentItemSchema,
   SectionSchema,
+  KitSchema,
   TemplateConfigSchema,
 } from "./schema";
 
@@ -70,6 +71,7 @@ export type {
   Hero,
   ContentItem,
   Section,
+  Kit,
   TemplateConfig,
 } from "./schema";
 
@@ -79,3 +81,6 @@ export {
   safeValidateTemplateConfig,
   TemplateValidationError,
 } from "./validator";
+
+// Export helper functions
+export { getKitById } from "./utils";

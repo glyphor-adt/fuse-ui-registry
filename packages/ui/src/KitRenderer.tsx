@@ -5,7 +5,7 @@ interface KitRendererProps {
   kit: Kit;
 }
 
-export function KitRenderer({ kit }: KitRendererProps) {
+export function KitRenderer({ kit }: KitRendererProps): JSX.Element {
   return (
     <div className="kit-container">
       <h1 className="kit-title">{kit.name}</h1>
@@ -23,11 +23,15 @@ interface SectionRendererProps {
   section: Section;
 }
 
-function SectionRenderer({ section }: SectionRendererProps) {
+function SectionRenderer({ section }: SectionRendererProps): JSX.Element {
+  const content = typeof section.content === 'string' 
+    ? section.content 
+    : JSON.stringify(section.content);
+  
   return (
     <section className="section">
       <h2 className="section-title">{section.title}</h2>
-      <div className="section-content">{section.content}</div>
+      <div className="section-content">{content}</div>
     </section>
   );
 }

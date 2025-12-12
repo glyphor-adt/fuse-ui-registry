@@ -16,3 +16,5 @@ export type { HeadingProps } from './components/Heading';
 
 export { Text } from './components/Text';
 export type { TextProps } from './components/Text';
+
+export { KitRenderer } from './KitRenderer';

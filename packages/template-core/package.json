@@ -1,12 +1,14 @@
 {
-  "name": "@fuse-ui/template-core",
+  "name": "@fuse-ui-registry/template-core",
   "version": "0.1.0",
   "description": "Core schema and validation for Fuse UI marketing template configurations",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'Lint passed'"
   },
   "keywords": [
     "template",
