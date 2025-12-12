@@ -42,20 +42,17 @@ export const ThemeSchema = z.object({
   borderRadius: z.enum(["none", "small", "medium", "large"]).optional(),
 });
 
-/**
- * Navigation item configuration
- */
-export const NavItemSchema: z.ZodType<{
+type NavItemType = {
   label: string;
   href: string;
   external?: boolean;
-  children?: Array<{
-    label: string;
-    href: string;
-    external?: boolean;
-    children?: any;
-  }>;
-}> = z.object({
+  children?: NavItemType[];
+};
+
+/**
+ * Navigation item configuration
+ */
+export const NavItemSchema: z.ZodType<NavItemType> = z.object({
   label: z.string().min(1, "Nav item label is required"),
   href: z.string().min(1, "Nav item href is required"),
   external: z.boolean().optional(),

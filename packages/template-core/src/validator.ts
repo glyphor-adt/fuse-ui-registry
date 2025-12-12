@@ -26,8 +26,8 @@ export class TemplateValidationError extends Error {
     this.errors = errors;
 
     // Maintains proper stack trace for where our error was thrown (only available on V8)
-    if (typeof (Error as any).captureStackTrace === "function") {
-      (Error as any).captureStackTrace(this, TemplateValidationError);
+    if ("captureStackTrace" in Error && typeof Error.captureStackTrace === "function") {
+      Error.captureStackTrace(this, TemplateValidationError);
     }
   }
 }
