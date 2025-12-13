@@ -13,6 +13,10 @@
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "@tabler/icons-react": "^3.34.0",
+    "clsx": "^2.1.1",
+    "motion": "^12.23.6",
+    "tailwind-merge": "^2.6.0",
     "@fuse-ui-registry/ui": "workspace:*",
     "@fuse-ui-registry/template-kits": "workspace:*",
     "@fuse-ui-registry/template-core": "workspace:*"

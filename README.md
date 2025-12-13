@@ -56,6 +56,20 @@ Lint:
 pnpm run lint
 ```
 
+## Pulling Aceternity Registry
+
+This repo can sync Aceternity UI components from `https://ui.aceternity.com/registry/index.json` into `packages/ui/src/registry/aceternity`.
+
+Dry-run (prints what would be added, skips anything already present):
+```bash
+pnpm aceternity:pull:ui
+```
+
+Write files + update `packages/ui/package.json` dependency stubs:
+```bash
+pnpm aceternity:pull:ui:write
+```
+
 ## Adding New Kits
 
 1. Add your kit configuration to `content/template.config.ts`

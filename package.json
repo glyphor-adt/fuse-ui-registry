@@ -6,7 +6,10 @@
     "dev": "pnpm --filter preview dev",
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "aceternity:pull": "node scripts/pull-aceternity.mjs --cwd apps/preview",
+    "aceternity:pull:ui": "node scripts/pull-aceternity-into-ui-package.mjs",
+    "aceternity:pull:ui:write": "node scripts/pull-aceternity-into-ui-package.mjs --write --updateDeps"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
