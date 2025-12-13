@@ -19,7 +19,8 @@
     "tailwind-merge": "^2.6.0",
     "@fuse-ui-registry/ui": "workspace:*",
     "@fuse-ui-registry/template-kits": "workspace:*",
-    "@fuse-ui-registry/template-core": "workspace:*"
+    "@fuse-ui-registry/template-core": "workspace:*",
+    "@fuse-ui-registry/sections": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.10.6",

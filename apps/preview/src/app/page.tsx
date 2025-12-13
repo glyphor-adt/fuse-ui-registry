@@ -29,6 +29,14 @@ export default function Home({
             </div>
           ))}
         </div>
+        <div className="mt-8 kit-list">
+          <h2 className="text-2xl font-semibold mb-4">Hero Section Variants:</h2>
+          <div>
+            <Link href="/hero" className="kit-link">
+              View Hero Variants
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }

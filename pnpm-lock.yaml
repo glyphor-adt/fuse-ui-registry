@@ -14,6 +14,9 @@ importers:
 
   apps/preview:
     dependencies:
+      '@fuse-ui-registry/sections':
+        specifier: workspace:*
+        version: link:../../packages/sections
       '@fuse-ui-registry/template-core':
         specifier: workspace:*
         version: link:../../packages/template-core
@@ -69,6 +72,22 @@ importers:
       tailwindcss:
         specifier: ^3.4.0
         version: 3.4.19
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
+  packages/sections:
+    dependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      zod:
+        specifier: ^3.23.0
+        version: 3.25.76
+    devDependencies:
+      '@types/react':
+        specifier: ^18.2.0
+        version: 18.3.27
       typescript:
         specifier: ^5.3.3
         version: 5.9.3
