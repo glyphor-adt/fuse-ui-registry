@@ -36,6 +36,26 @@
   "dependencies": {
     "clsx": "^2.0.0",
     "motion": "^12.23.6",
-    "@fuse-ui-registry/template-core": "workspace:*"
+    "@fuse-ui-registry/template-core": "workspace:*",
+    "@tsparticles/react": "latest",
+    "@tsparticles/engine": "latest",
+    "@tsparticles/slim": "latest",
+    "@tabler/icons-react": "latest",
+    "mini-svg-data-uri": "latest",
+    "@radix-ui/react-tabs": "latest",
+    "simplex-noise": "latest",
+    "@radix-ui/react-label": "latest",
+    "three": "latest",
+    "three-globe": "latest",
+    "@react-three/fiber@alpha": "latest",
+    "@react-three/drei": "latest",
+    "@types/three": "latest",
+    "@radix-ui/react-hover-card": "latest",
+    "qss": "latest",
+    "react-dropzone": "latest",
+    "dotted-map": "latest",
+    "react-syntax-highlighter": "latest",
+    "@types/react-syntax-highlighter": "latest",
+    "lucide-react": "latest"
   }
 }

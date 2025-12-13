@@ -1,0 +1,42 @@
+"use client";
+import * as React from "react";
+import * as LabelPrimitive from "@radix-ui/react-label";
+
+import { cn } from "../../_shared/cn";
+import type { RegistryItemMeta } from "../../types";
+
+const Label = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <LabelPrimitive.Root
+    ref={ref}
+    className={cn(
+      "text-sm font-medium text-black dark:text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+      className
+    )}
+    {...props}
+  />
+));
+Label.displayName = LabelPrimitive.Root.displayName;
+
+export { Label };
+
+export const aceternityLabelMeta = {
+	id: "aceternity/ui/label",
+	provider: "aceternity",
+	kind: "ui",
+	name: "label",
+	title: "Label",
+	categories: [],
+	tags: [],
+	source: {
+		registryUrl: "https://ui.aceternity.com/registry/label.json",
+		docsUrl: "https://ui.aceternity.com/components/label",
+	},
+	dependencies: {
+		npm: [
+		  "@radix-ui/react-label"
+		],
+	},
+} satisfies RegistryItemMeta;
